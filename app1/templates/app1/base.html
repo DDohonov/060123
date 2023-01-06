@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for form in forms %}
+        <p>{{form.form.name}}  {{form.form.techer.name}}</p>
+        {% for student in form.students %}
+            <p>{{student.name}}</p>
+        {% endfor %}
+    {% endfor %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <select name="link" id="">
+            <option value="admin">Admin</option>
+            <option value="main">Main</option>
+            <option value="shop">shop</option>
+            <option value="help">help</option>
+        </select>
+        <button>перейти</button>
+    </form>
+</body>
+</html>
